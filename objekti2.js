@@ -4,3 +4,4 @@ console.log(d);
 var d2 = new Date ();
 console.log(d2);
 //ispisuje današnji datum
+console.log(d2.toDateString());
