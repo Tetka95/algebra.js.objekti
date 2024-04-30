@@ -13,7 +13,7 @@ Svaka funkcija mora primati argumente i vracati neku vrijednost.
 
 var auto = {
     boja : 'crna',
-    marka : {tip: "BMW", model: "ff30"},
+    marka : {tip: "BMW", model: "f30"},
     cijena : 22000,
     brzina: 10,
     maxBrzina: 220,
