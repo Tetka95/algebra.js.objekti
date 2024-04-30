@@ -6,11 +6,16 @@ Svaka funkcija mora primati argumente i vracati neku vrijednost.
 
 2. Pozovite funkcije svog objekta sa argumentima i ispisite rezultat.
 
-3.
+3. Pomoću petlje pristupi svim brojivim svojstvima auto objekta i ispiši
+vrijednosti u konzoli.
 
-4. Pretvori svoj objekt u JSON string.
+4. Ispiši u konzoli razumljivu rečenicu koja uključuje bar 
+2 svojstva tvog objekta.
+
+5. Pretvori svoj objekt u JSON string.
 */
 
+//1.
 var auto = {
     boja : 'crna',
     marka : {tip: "BMW", model: "f30"},
@@ -45,8 +50,10 @@ var auto = {
     },
 };
 
+//5.
 console.log("auto JSON --> " + JSON.stringify(auto));
 
+//2.
 console.log('početna brzina je: ' + auto.brzina);
 console.log('auto će ubrzati na: ' + auto.ubrzaj(2));
 console.log ('brzina nakon ubrzanja je: ' + auto.brzina);
@@ -60,3 +67,20 @@ auto["boja"] = "žuta";
 auto.boja = "zelena";
 
 console.log(auto.boja);
+
+//3.
+for (kljuc in auto) {
+    let tmpKljuc = auto[kljuc];
+    //console.log("provjeravamo " + tmpKljuc);
+
+    if (typeof tmpKljuc == "number") {
+        console.log(kljuc + " : " + tmpKljuc);
+    }
+
+    /*if (auto.propertyIsEnumerable(kljuc)) {
+        console.log(kljuc + " : " + tmpKljuc);
+    }*/
+} 
+
+//4.
+console.log("Prodajem auto " + auto.marka.tip + ' ' + auto.marka.model + ", boja auta je " + auto.boja + " te postiže maksimalnu brzinu od " + auto.maxBrzina + ".");
