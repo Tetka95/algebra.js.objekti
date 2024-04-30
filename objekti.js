@@ -4,8 +4,10 @@ od kojih su 3 funkcije (npr. ubrzaj, zakoci itd.), a jedna je također objekt.
 Probajte referencirati druge vrijednosti objekta u funkcijama.
 Svaka funkcija mora primati argumente i vracati neku vrijednost.
 
-2. 
+2. Pozovite funkcije svog objekta sa argumentima i ispisite rezultat.
+
 3.
+
 4. Pretvori svoj objekt u JSON string.
 */
 
@@ -17,10 +19,25 @@ var auto = {
     maxBrzina: 220,
     registriran: true,
     ubrzaj: function(vrijeme) {
-        return vrijeme *5;
+        let tmpVrijeme = 0;
+        while (this.brzina < this.maxBrzina) {
+            this.brzina = this.brzina + 5;
+            if (tmpVrijeme == vrijeme) {
+                break;
+            }
+            tmpVrijeme++;
+        }
+        return this.brzina;
     },
     zakoci: function(vrijeme) {
-        return vrijeme /5;
+        while (this.brzina > 0)  {
+            this.brzina = this.brzina - 20;
+            vrijeme--;
+            if(vrijeme == 0) {
+                break;
+            }
+        }
+        return this.brzina;
     },
     promijeniBoju: function(novaBoja) {
         this.boja = novaBoja;
@@ -29,3 +46,12 @@ var auto = {
 };
 
 console.log("auto JSON --> " + JSON.stringify(auto));
+
+console.log('početna brzina je: ' + auto.brzina);
+console.log('auto će ubrzati na: ' + auto.ubrzaj(2));
+console.log ('brzina nakon ubrzanja je: ' + auto.brzina);
+console.log('auto će ubrzati na (nakon 41sec): ' + auto.ubrzaj(41));
+
+console.log('nakon 5sec kočenja brzina je: ' + auto.zakoci(5));
+
+console.log('nova boja: ' + auto.promijeniBoju("crvena"));
