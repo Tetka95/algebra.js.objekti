@@ -19,7 +19,7 @@ var auto = {
     maxBrzina: 220,
     registriran: true,
     ubrzaj: function(vrijeme) {
-        let tmpVrijeme = 0;
+        let tmpVrijeme = 1;
         while (this.brzina < this.maxBrzina) {
             this.brzina = this.brzina + 5;
             if (tmpVrijeme == vrijeme) {
