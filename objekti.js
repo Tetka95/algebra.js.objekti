@@ -54,4 +54,4 @@ console.log('auto će ubrzati na (nakon 41sec): ' + auto.ubrzaj(41));
 
 console.log('nakon 5sec kočenja brzina je: ' + auto.zakoci(5));
 
-console.log('nova boja: ' + auto.promijeniBoju("crvena"));
+console.log('trenutna boja auta: ' + auto.boja + ", a nova boja je: " + auto.promijeniBoju("crvena"));
